@@ -1,0 +1,57 @@
+.btn-logout {
+  color: #fff;
+  background-color: #f7ba15;
+  border-color: #eea236;
+}
+.btn-logout:focus,
+.btn-logout.focus {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #985f0d;
+}
+.btn-logout:hover {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.btn-logout:active,
+.btn-logout.active,
+.open > .dropdown-toggle.btn-logout {
+  color: #fff;
+  background-color: #ec971f;
+  border-color: #d58512;
+}
+.btn-logout:active:hover,
+.btn-logout.active:hover,
+.open > .dropdown-toggle.btn-logout:hover,
+.btn-logout:active:focus,
+.btn-logout.active:focus,
+.open > .dropdown-toggle.btn-logout:focus,
+.btn-logout:active.focus,
+.btn-logout.active.focus,
+.open > .dropdown-toggle.btn-logout.focus {
+  color: #fff;
+  background-color: #d58512;
+  border-color: #985f0d;
+}
+.btn-logout:active,
+.btn-logout.active,
+.open > .dropdown-toggle.btn-logout {
+  background-image: none;
+}
+.btn-logout.disabled:hover,
+.btn-logout[disabled]:hover,
+fieldset[disabled] .btn-logout:hover,
+.btn-logout.disabled:focus,
+.btn-logout[disabled]:focus,
+fieldset[disabled] .btn-logout:focus,
+.btn-logout.disabled.focus,
+.btn-logout[disabled].focus,
+fieldset[disabled] .btn-logout.focus {
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+.btn-logout .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
