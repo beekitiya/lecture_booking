@@ -69,12 +69,8 @@
                     <table id="myTable" class="table table-bordered table-striped" role="grid" aria-describedby="example2_info">
                       <thead>
                             <tr>
-                                <th style="font-size:14px;text-align:center;width:20%">วัน เดือน ปี</th>
-                                <th style="font-size:14px;text-align:center;width:16%">13:30</th>
-                                <th style="font-size:14px;text-align:center;width:16%">14:00</th>
-                                <th style="font-size:14px;text-align:center;width:16%">14:30</th>
-                                <th style="font-size:14px;text-align:center;width:16%">15:00</th>
-                                <th style="font-size:14px;text-align:center;width:16%">15:30</th>
+                                <th style="font-size:14px;text-align:center;width:30%">วัน เดือน ปี</th>
+                                <th style="font-size:14px;text-align:center;width:70%">เวลาบรรยาย</th>
                             </tr>
                         </thead>
                       <tbody>
@@ -82,43 +78,46 @@
                             echo "<tr>";
                                 echo "<input type=\"hidden\" value=\"".$date['id_date']."\">";
                                 echo '<td style="font-size:14px;text-align:center">'.$date['date'].'</td>'; ?>
-                                <?php foreach($list_booking as $lb) { ?>
-                                    <td><center>
+                                <td><center>
+                                    <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
+                                    <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-success btn-md">14:00</button></a>
+                                    <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-success btn-md">14:30</button></a>
+                                    <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-success btn-md">15:00</button></a>
+                                    <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-success btn-md">15:30</button></a>
+                                    <?php foreach($list_booking as $lb) { ?>
                                         <?php if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==1) { ?>
                                             <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-danger btn-md">13:30</button></a>
-                                        <?php } else { ?>
-                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
-                                        <?php } ?>
-                                    </center></td>
-                                    <td><center>
-                                        <?php if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==2) { ?>
-                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-danger btn-md">14:00</button></a>
-                                        <?php } else { ?>
                                             <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-success btn-md">14:00</button></a>
-                                        <?php } ?>
-                                    </center></td>
-                                    <td><center>
-                                        <?php if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==3) { ?>
-                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-danger btn-md">14:30</button></a>
-                                        <?php } else { ?>
                                             <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-success btn-md">14:30</button></a>
-                                        <?php } ?>
-                                    </center></td>
-                                    <td><center>
-                                        <?php if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==4) { ?>
-                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-danger btn-md">15:00</button></a>
-                                        <?php } else { ?>
                                             <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-success btn-md">15:00</button></a>
-                                        <?php } ?>
-                                    </center></td>
-                                    <td><center>
-                                        <?php if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==5) { ?>
-                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-danger btn-md">15:30</button></a>
-                                        <?php } else { ?>
                                             <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-success btn-md">15:30</button></a>
+                                        <?php } else if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==2) { ?>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
+                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-danger btn-md">14:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-success btn-md">14:30</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-success btn-md">15:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-success btn-md">15:30</button></a>
+                                        <?php } else if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==3) { ?>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-success btn-md">14:00</button></a>
+                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-danger btn-md">14:30</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-success btn-md">15:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-success btn-md">15:30</button></a>
+                                        <?php } else if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==4) { ?>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-success btn-md">14:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-success btn-md">14:30</button></a>
+                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-danger btn-md">15:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-success btn-md">15:30</button></a>
+                                        <?php } else if($date['id_date']==$lb['id_lecture_date'] && $lb['id_lecture_time']==5) { ?>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="1"><button type="button" class="btn btn-success btn-md">13:30</button></a>
+                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="2"><button type="button" class="btn btn-danger btn-md">14:00</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="3"><button type="button" class="btn btn-success btn-md">14:30</button></a>
+                                            <a class="myModal" data-id="<?php echo $date['id_date']; ?>" data-time="4"><button type="button" class="btn btn-success btn-md">15:00</button></a>
+                                            <a class="editModal" data-id="<?php echo $date['id_date']; ?>" data-time="5"><button type="button" class="btn btn-danger btn-md">15:30</button></a>
                                         <?php } ?>
-                                    </center></td>
-                                <?php } ?> <!-- foreach list_lecture_status -->
+                                    <?php } ?> <!-- foreach list_booking -->
+                                </center></td>
                             </tr>
                         <?php } ?> <!-- foreach list_date -->
                       </tbody>
